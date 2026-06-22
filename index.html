@@ -13,9 +13,9 @@
     
     <link rel="stylesheet" href="style.css">
     
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
 </head>
 <body>
     <!-- Loader -->
@@ -40,6 +40,14 @@
                     <i data-lucide="file-type"></i> DOCX Format
                 </a>
             </div>
+        </div>
+    </div>
+
+    <!-- Theater Mode Modal -->
+    <div id="theater-modal" class="theater-overlay">
+        <button class="theater-close" id="close-theater"><i data-lucide="x"></i></button>
+        <div class="theater-container" id="theater-container">
+            <!-- Video will be dynamically moved here -->
         </div>
     </div>
 
@@ -168,8 +176,12 @@
 
                 <!-- Roolts -->
                 <div class="project-block reveal-up">
-                    <div class="project-media">
-                        <video src="assets/roolts-demo.mp4" autoplay muted loop playsinline poster="assets/roolts.png"></video>
+                    <div class="media-column">
+                        <div class="project-media" id="roolts-media-container">
+                            <video id="roolts-video" src="assets/roolts-demo.mp4" muted playsinline poster="assets/roolts.png"></video>
+                            <button class="play-btn-overlay" id="play-roolts" title="Play Video"><i data-lucide="play"></i></button>
+                        </div>
+                        <p class="media-hint"><i data-lucide="play-circle"></i> Click to watch demo in theater mode</p>
                     </div>
                     <div class="project-info">
                         <div class="project-badge">🏆 2nd Place — Pragyotsav Expo</div>
@@ -308,7 +320,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>lucide.createIcons();</script>
+    <script src="script.js" defer></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
 </body>
 </html>

@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initModal();
     initNavScroll();
     initCopyEmail();
+    initTheaterMode();
 });
 
 /* ── Loader ──────────────────────────────── */
@@ -21,8 +22,8 @@ function initLoader() {
     window.addEventListener('load', () => {
         gsap.to(loader, {
             opacity: 0,
-            duration: 0.6,
-            delay: 1.3,
+            duration: 0.4,
+            delay: 0.1,
             ease: 'power2.inOut',
             onComplete: () => {
                 loader.style.display = 'none';
@@ -37,16 +38,15 @@ function revealHero() {
     gsap.to('#hero .reveal-up', {
         y: 0,
         opacity: 1,
-        duration: 1,
-        stagger: 0.12,
+        duration: 0.4,
+        stagger: 0.05,
         ease: 'power3.out'
     });
 
     gsap.to('#navbar', {
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        delay: 0.2,
+        duration: 0.4,
         ease: 'power3.out'
     });
 }
@@ -63,12 +63,12 @@ function initScrollAnimations() {
         gsap.to(el, {
             scrollTrigger: {
                 trigger: el,
-                start: 'top 88%',
+                start: 'top 95%',
                 toggleActions: 'play none none none'
             },
             y: 0,
             opacity: 1,
-            duration: 0.9,
+            duration: 0.4,
             ease: 'power3.out'
         });
     });
@@ -98,12 +98,12 @@ function initScrollAnimations() {
             gsap.to(batch, {
                 y: 0,
                 opacity: 1,
-                duration: 0.7,
-                stagger: 0.1,
+                duration: 0.4,
+                stagger: 0.05,
                 ease: 'power3.out'
             });
         },
-        start: 'top 90%'
+        start: 'top 95%'
     });
 }
 
@@ -185,6 +185,63 @@ function initCopyEmail() {
             document.body.removeChild(ta);
             tooltip.classList.add('show');
             setTimeout(() => tooltip.classList.remove('show'), 2000);
+        }
+    });
+}
+
+/* ── Theater Mode ────────────────────────── */
+function initTheaterMode() {
+    const mediaContainer = document.getElementById('roolts-media-container');
+    const video = document.getElementById('roolts-video');
+    const theaterModal = document.getElementById('theater-modal');
+    const theaterContainer = document.getElementById('theater-container');
+    const closeBtn = document.getElementById('close-theater');
+
+    if (!mediaContainer || !video || !theaterModal || !theaterContainer || !closeBtn) return;
+
+    const openTheater = () => {
+        // Move video to theater
+        theaterContainer.appendChild(video);
+        theaterModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        video.controls = true;
+        video.currentTime = 0;
+        video.play().catch(e => console.log('Autoplay blocked', e));
+    };
+
+    const closeTheater = () => {
+        // Pause and move back
+        video.pause();
+        video.controls = false;
+        
+        theaterModal.classList.remove('active');
+        document.body.style.overflow = '';
+        
+        // Wait for fade out to finish before moving DOM node
+        setTimeout(() => {
+            // Re-insert before the play button overlay
+            const playBtn = document.getElementById('play-roolts');
+            if (playBtn) {
+                mediaContainer.insertBefore(video, playBtn);
+            } else {
+                mediaContainer.appendChild(video);
+            }
+        }, 400); // matches CSS transition time
+    };
+
+    mediaContainer.addEventListener('click', openTheater);
+    closeBtn.addEventListener('click', closeTheater);
+
+    theaterModal.addEventListener('click', (e) => {
+        if (e.target === theaterModal || e.target === theaterContainer) {
+            closeTheater();
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && theaterModal.classList.contains('active')) {
+            closeTheater();
         }
     });
 }
