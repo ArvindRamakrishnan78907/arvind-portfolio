@@ -7,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener('DOMContentLoaded', () => {
     initLoader();
-    initScrollAnimations();
     initModal();
     initNavScroll();
     initCopyEmail();
@@ -35,76 +34,13 @@ function initLoader() {
 
 /* ── Hero entrance ───────────────────────── */
 function revealHero() {
-    gsap.to('#hero .reveal-up', {
-        y: 0,
-        opacity: 1,
-        duration: 0.4,
-        stagger: 0.05,
-        ease: 'power3.out'
-    });
-
-    gsap.to('#navbar', {
-        y: 0,
-        opacity: 1,
-        duration: 0.4,
-        ease: 'power3.out'
-    });
+    // Normal loading, no transitions.
+    gsap.set('#navbar', { y: 0, opacity: 1 });
 }
 
 /* ── Scroll-triggered reveals ────────────── */
 function initScrollAnimations() {
-    // Set initial state for navbar (it starts hidden)
-    gsap.set('#navbar', { y: -20, opacity: 0 });
-
-    // Every .reveal-up outside the hero
-    gsap.utils.toArray('.reveal-up').forEach(el => {
-        if (el.closest('#hero')) return; // hero handled separately
-
-        gsap.to(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 95%',
-                toggleActions: 'play none none none'
-            },
-            y: 0,
-            opacity: 1,
-            duration: 0.4,
-            ease: 'power3.out'
-        });
-    });
-
-    // Parallax on project images
-    gsap.utils.toArray('.project-media').forEach(box => {
-        const img = box.querySelector('img');
-        if (!img) return;
-        gsap.fromTo(img,
-            { yPercent: -5 },
-            {
-                yPercent: 5,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: box,
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    scrub: true
-                }
-            }
-        );
-    });
-
-    // Skill cards stagger
-    ScrollTrigger.batch('.skill-card', {
-        onEnter: batch => {
-            gsap.to(batch, {
-                y: 0,
-                opacity: 1,
-                duration: 0.4,
-                stagger: 0.05,
-                ease: 'power3.out'
-            });
-        },
-        start: 'top 95%'
-    });
+    // Disabled normal animations to keep it simple and fast.
 }
 
 /* ── Nav background on scroll ────────────── */

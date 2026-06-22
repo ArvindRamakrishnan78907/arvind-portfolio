@@ -491,7 +491,7 @@ footer {
 }
 
 /* ── Reveal Helpers (GSAP targets) ───────── */
-.reveal-up { opacity: 0; transform: translateY(30px); will-change: transform, opacity; }
+.reveal-up { opacity: 1; transform: none; }
 .d1 { transition-delay: .1s; }
 .d2 { transition-delay: .2s; }
 .d3 { transition-delay: .3s; }
