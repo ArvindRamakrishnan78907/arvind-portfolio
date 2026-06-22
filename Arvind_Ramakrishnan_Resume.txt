@@ -1,0 +1,35 @@
+﻿Arvind Ramakrishnan Chennai, Tamil Nadu | +91 9486266023 | arvindramakrishnan17@gmail.com 
+Linkedin | https://www.linkedin.com/in/arvind-ramakrishnan-17493727b/ 
+Github | github.com/ArvindRamakrishnan78907
+Professional Summary Solutions-driven AI/ML Developer and Software Engineer with expertise in Python, Data Engineering, and full-stack development with proven track record of processing 24GB+ datasets and architecting complex web applications and with experience at building AI-powered tools and optimizing algorithms to solve real-world operational challenges
+Technical Skills
+* Programming Languages: Python, Java, SQL, C#, JavaScript
+* Cloud Concepts & DevOps: AWS (Theoretical Knowledge), Git, GitHub
+* Data Architecture: Data Cleaning, Wrangling Techniques, Predictive Modeling
+* AI & ML: Prompt Engineering, Generative AI Integration, AI Bot Development
+Experience AI/Data Science Intern | 1M1B Green Internship - Virtual, TN | December 2025 - January 2026
+* Engineered a scalable O(n) data pipeline to process 24GB+ of environmental time-series data, reducing computational complexity by 300x through optimized vectorized operations
+* Architected an interactive web application deployed for real-time water quality monitoring across 49 Asian countries, aligning risk assessments with WHO/EPA standards
+* Deployed predictive machine learning models (CatBoost/XGBoost) utilizing k-fold cross-validation to ensure stability across 7 key environmental indicators
+* Designed dynamic visualization dashboards integrating live API data from the Hong Kong EPD into a responsive database, implementing advanced data processing algorithms
+Projects 
+Roolts - AI-Powered Code Editor & Portfolio Platform | 
+* Secured 2nd place out of 20 teams in the Sustainability category at the Pragyotsav Project Expo (Easwari Engineering College) for developing an open-source web IDE
+* Engineered a Smart AI Router to dynamically select optimal foundational LLMs (Gemini, Claude, DeepSeek) based on task complexity for real-time code generation
+* Integrated multi-language execution services (Python, Java, JavaScript) utilizing the Monaco Editor to mirror advanced VS Code functionality within the browser
+* Implemented secure OAuth 2.0 flows for GitHub, LinkedIn, and Twitter, enabling seamless direct repository commits and automated portfolio updates
+* Optimized frontend performance with Vite and utilized Zustand for global state management, ensuring highly responsive interactions across the Learning Hub interface
+Certifications
+* NPTEL (IIT): Natural Language Processing (NLP), Introduction to Internet of Things (IoT), Blockchain Architecture
+* IBM: Make Agentic AI Work for you, Fundamentals of Sustainability and Technology, ML & Deep Learning
+* Cisco:Security & Connectivity, Python Essentials, CyberSecurity, Modern AI
+* Microsoft: Foundational C# Certification
+Languages
+* English: Native / Bilingual Proficiency
+* Tamil: Native / Bilingual Proficiency
+* Hindi: Elementary Proficiency(Comprehension)
+Technical Interests
+* Algorithm Optimization (LeetCode) and exploring new algorithms
+* Hardware Benchmarking (PC components, emerging smartphone tech
+* AI Applications and seamless LLM integration strategies
+

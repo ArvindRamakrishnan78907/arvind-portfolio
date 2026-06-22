@@ -3,323 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arvind Ramakrishnan | Technologist & AI/ML Developer</title>
-    <meta name="description" content="Official Portfolio of Arvind Ramakrishnan - AI/ML Specialist, Software Developer, and Aspiring Technologist. Building the future of intelligent systems.">
+    <title>Arvind Ramakrishnan | AI/ML Developer</title>
+    <meta name="description" content="Arvind Ramakrishnan — Solutions-driven AI/ML Developer and Software Engineer. Building intelligent systems, beautifully engineered.">
     
-    <!-- Premium Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Styling -->
     <link rel="stylesheet" href="style.css">
     
-    <!-- Dependencies -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
-<body class="dark-theme">
-    <!-- Custom Cursor -->
-    <div id="cursor-follower"></div>
-    <div id="cursor-dot"></div>
-
-    <!-- Background Canvas -->
-    <canvas id="hero-canvas"></canvas>
-
-    <!-- Global Loader -->
+<body>
+    <!-- Loader -->
     <div id="loader">
         <div class="loader-inner">
-            <div class="loader-circle"></div>
-            <div class="loader-text">INITIALIZING SYSTEM</div>
+            <div class="loader-bar"></div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal-overlay">
+        <div class="modal-sheet">
+            <button class="modal-close" id="close-modal"><i data-lucide="x"></i></button>
+            <div class="modal-icon"><i data-lucide="file-text"></i></div>
+            <h2>Download Resume</h2>
+            <p>Choose your preferred format.</p>
+            <div class="modal-actions">
+                <a href="Arvind_Ramakrishnan_Resume.pdf" download class="modal-btn modal-btn-primary">
+                    <i data-lucide="file-text"></i> PDF Format
+                </a>
+                <a href="Arvind_Ramakrishnan_Resume.docx" download class="modal-btn modal-btn-secondary">
+                    <i data-lucide="file-type"></i> DOCX Format
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="container nav-content">
-            <div class="logo">
-                <span class="logo-accent">ARVIND</span>.DEV
-            </div>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">AR</a>
             <ul class="nav-links">
-                <li><a href="#hero">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#projects">WORK</a></li>
-                <li><a href="#certifications">ACHIEVEMENTS</a></li>
-                <li><a href="#contact" class="btn-nav">CONNECT</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="menu-toggle" id="mobile-menu-btn">
-                <i data-lucide="menu"></i>
-            </div>
+            <button id="open-resume-modal" class="nav-cta">Resume</button>
         </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <!-- ==================== HERO ==================== -->
         <section id="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <div class="badge animate-init">ASPIRING TECHNOLOGIST</div>
-                    <h1 class="hero-title animate-init">
-                        Building <span class="text-gradient">Intelligent</span> <br> 
-                        Future Systems.
-                    </h1>
-                    <p class="hero-desc animate-init">
-                        Aspiring Technologist and Developer specializing in AI, Machine Learning, and Software Development. Passionate about creating efficient solutions for real-world operational problems.
-                    </p>
-                    <div class="hero-btns animate-init">
-                        <a href="#projects" class="btn btn-primary">EXPLORE PROJECTS <i data-lucide="arrow-right"></i></a>
-                        <a href="#contact" class="btn btn-outline">LET'S TALK</a>
-                    </div>
-                </div>
-                <div class="hero-image-vane animate-init">
-                    <div class="image-container">
-                        <img src="assets/avatar.png" alt="Arvind Ramakrishnan" id="main-avatar">
-                        <div class="glass-layer"></div>
-                        <!-- Skill Floating Pips -->
-                        <div class="floating-pip pip-1"><i data-lucide="brain"></i></div>
-                        <div class="floating-pip pip-2"><i data-lucide="code"></i></div>
-                        <div class="floating-pip pip-3"><i data-lucide="database"></i></div>
-                    </div>
+            <div class="hero-center">
+                <p class="hero-eyebrow reveal-up">Arvind Ramakrishnan</p>
+                <h1 class="hero-headline reveal-up d1">
+                    Intelligent systems.<br>
+                    <span class="text-gradient">Beautifully engineered.</span>
+                </h1>
+                <p class="hero-sub reveal-up d2">
+                    Solutions-driven AI/ML Developer and Software Engineer with expertise in Python, Data Engineering, and full-stack development — with a proven track record of processing 24GB+ datasets and architecting complex web applications.
+                </p>
+                <div class="hero-actions reveal-up d3">
+                    <a href="#work" class="apple-btn apple-btn-filled">Explore Projects</a>
+                    <a href="#contact" class="apple-btn apple-btn-outline">Get in Touch</a>
                 </div>
             </div>
-            <a href="#about" class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <span>SCROLL DOWN</span>
-            </a>
+            <div class="hero-visual reveal-up d4">
+                <img src="assets/avatar.png" alt="Arvind Ramakrishnan">
+            </div>
         </section>
 
-        <!-- Stats Counter -->
-        <div class="stats-section">
-            <div class="container stats-grid">
-                <div class="stat-item" data-stat="projects">
-                    <h3 class="stat-num">2+</h3>
-                    <p>Major Projects</p>
-                </div>
-                <div class="stat-item" data-stat="experience">
-                    <h3 class="stat-num">AI/DS</h3>
-                    <p>Internship</p>
-                </div>
-                <div class="stat-item" data-stat="skills">
-                    <h3 class="stat-num">10+</h3>
-                    <p>Core Skills</p>
-                </div>
-                <div class="stat-item" data-stat="status">
-                    <h3 class="stat-num">II Year</h3>
-                    <p>CSE student</p>
-                </div>
+        <!-- ==================== MARQUEE TICKER ==================== -->
+        <div class="ticker-strip">
+            <div class="ticker-track">
+                <span>Python</span><span>·</span>
+                <span>Java</span><span>·</span>
+                <span>JavaScript</span><span>·</span>
+                <span>React</span><span>·</span>
+                <span>Machine Learning</span><span>·</span>
+                <span>Gen AI</span><span>·</span>
+                <span>Data Engineering</span><span>·</span>
+                <span>AWS</span><span>·</span>
+                <span>SQL</span><span>·</span>
+                <span>Prompt Engineering</span><span>·</span>
+                <span>Python</span><span>·</span>
+                <span>Java</span><span>·</span>
+                <span>JavaScript</span><span>·</span>
+                <span>React</span><span>·</span>
+                <span>Machine Learning</span><span>·</span>
+                <span>Gen AI</span><span>·</span>
+                <span>Data Engineering</span><span>·</span>
+                <span>AWS</span><span>·</span>
+                <span>SQL</span><span>·</span>
+                <span>Prompt Engineering</span><span>·</span>
             </div>
         </div>
 
-        <!-- About Section -->
+        <!-- ==================== ABOUT ==================== -->
         <section id="about">
-            <div class="container section-header">
-                <h2 class="title-reveal">THE PERSON BEHIND THE CODE</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="container about-content">
-                <div class="about-main">
-                    <p class="lead">II Year Computer Science and Engineering student at Easwari Engineering College with a focus on AI & ML.</p>
-                    <div class="about-grid">
-                        <div class="about-card glass">
-                            <i data-lucide="zap"></i>
-                            <h3>Vision</h3>
-                            <p>To bridge the gap between complex AI research and practical, user-centric software solutions.</p>
-                        </div>
-                        <div class="about-card glass">
-                            <i data-lucide="cpu"></i>
-                            <h3>Tech Stack</h3>
-                            <div class="tag-cloud">
-                                <span>Python</span><span>Java</span><span>SQL</span><span>C#</span><span>Javascript</span><span>React</span><span>Flask</span><span>Spring Boot</span><span>Git</span>
-                            </div>
-                        </div>
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-left">
+                        <p class="section-label reveal-up">About</p>
+                        <h2 class="section-headline reveal-up d1">Built to solve<br>real-world problems.</h2>
                     </div>
-                </div>
-                <div class="hobbies-vane">
-                    <h3>Beyond Terminal</h3>
-                    <div class="hobbies-grid">
-                        <div class="hobby-item">
-                            <i data-lucide="smartphone"></i>
-                            <span>Tech Enthusiast</span>
-                        </div>
-                        <div class="hobby-item">
-                            <i data-lucide="terminal"></i>
-                            <span>Leetcode</span>
-                        </div>
-                        <div class="hobby-item">
-                            <i data-lucide="monitor"></i>
-                            <span>PC Hardware</span>
-                        </div>
+                    <div class="about-right reveal-up d2">
+                        <p class="about-body">
+                            I'm a II Year Computer Science and Engineering student at <strong>Easwari Engineering College, Chennai</strong>, specializing in Artificial Intelligence and Machine Learning.
+                        </p>
+                        <p class="about-body">
+                            My focus lies in building AI-powered tools and optimizing algorithms to solve real-world operational challenges. From engineering scalable O(n) data pipelines that process 24GB+ of environmental time-series data, to architecting interactive web applications deployed for real-time monitoring — I build things that matter.
+                        </p>
+                        <p class="about-body">
+                            When I'm not coding, I'm deep into algorithm optimization on LeetCode, benchmarking PC hardware, or exploring seamless LLM integration strategies.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container section-header">
-                <h2 class="title-reveal">FEATURED INNOVATIONS</h2>
-                <div class="accent-line"></div>
-            </div>
-            <div class="container projects-layout">
-                <!-- Roolts -->
-                <div class="project-showcase glass reveal-scroll">
-                    <div class="project-img-box">
-                        <img src="assets/roolts.png" alt="Roolts AI IDE">
+        <!-- ==================== SKILLS ==================== -->
+        <section id="skills" class="bg-surface">
+            <div class="container">
+                <p class="section-label reveal-up">Capabilities</p>
+                <h2 class="section-headline reveal-up d1">What I bring to the table.</h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-card reveal-up">
+                        <div class="skill-icon"><i data-lucide="code-2"></i></div>
+                        <h3>Programming</h3>
+                        <p>Python, Java, SQL, C#, JavaScript — building robust software across the stack.</p>
                     </div>
-                    <div class="project-details">
-                        <div class="project-num">01</div>
-                        <h3>Roolts - AI IDE & Portfolio Hub</h3>
-                        <p>A comprehensive web-based IDE designed to streamline the "Build, Learn, Share" loop. Features a "Smart AI Router" selecting optimal LLMs (Gemini, Claude, DeepSeek) for coding tasks.</p>
+                    <div class="skill-card reveal-up d1">
+                        <div class="skill-icon"><i data-lucide="brain-circuit"></i></div>
+                        <h3>AI & Machine Learning</h3>
+                        <p>Prompt Engineering, Generative AI Integration, AI Bot Development, CatBoost/XGBoost.</p>
+                    </div>
+                    <div class="skill-card reveal-up d2">
+                        <div class="skill-icon"><i data-lucide="database"></i></div>
+                        <h3>Data Architecture</h3>
+                        <p>Data Cleaning, Wrangling Techniques, Predictive Modeling, and scalable pipeline engineering.</p>
+                    </div>
+                    <div class="skill-card reveal-up d3">
+                        <div class="skill-icon"><i data-lucide="cloud"></i></div>
+                        <h3>Cloud & DevOps</h3>
+                        <p>AWS (Theoretical Knowledge), Git, GitHub — version control and modern development workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== PROJECTS ==================== -->
+        <section id="work">
+            <div class="container">
+                <p class="section-label reveal-up">Selected Work</p>
+                <h2 class="section-headline reveal-up d1">Projects that push boundaries.</h2>
+
+                <!-- Roolts -->
+                <div class="project-block reveal-up">
+                    <div class="project-media">
+                        <video src="assets/roolts-demo.mp4" autoplay muted loop playsinline poster="assets/roolts.png"></video>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-badge">🏆 2nd Place — Pragyotsav Expo</div>
+                        <h3>Roolts</h3>
+                        <p class="project-subtitle">AI-Powered Code Editor & Portfolio Platform</p>
+                        <p class="project-desc">A highly customizable web IDE designed mainly for competitive coding and students. Built to eliminate the complexity of VS Code and be even easier than Google Colab, allowing you to build small-level applications or solve algorithms without setup headaches — just open and code.</p>
+                        <ul class="project-highlights">
+                            <li><strong>CodeChamp:</strong> Inbuilt extension that analyzes code to provide <strong>time and space complexity</strong>, plus <strong>intelligent hints</strong> using basic algorithms and AI.</li>
+                            <li><strong>VS Code extension support</strong> with <strong>inbuilt apps</strong> seamlessly integrated into the web for easy access and directly interactable with the compiler.</li>
+                            <li>Write over code with a <strong>stylus or pointer</strong> for annotations and quick edits.</li>
+                            <li><strong>Smart AI Router</strong> dynamically selects optimal LLMs (Gemini, Claude, DeepSeek).</li>
+                            <li><strong>Multi-language execution</strong> (Python, Java, JS) via Monaco Editor.</li>
+                        </ul>
                         <div class="project-tags">
-                            <span>React</span><span>Zustand</span><span>Flask</span><span>Monaco</span><span>OAuth 2.0</span>
+                            <span>Python</span><span>React</span><span>Zustand</span><span>Flask</span><span>Monaco</span><span>OAuth 2.0</span>
                         </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/ArvindRamakrishnan78907/Roolts" target="_blank" class="btn btn-small">VIEW CODE <i data-lucide="github"></i></a>
-                            <span class="award-badge"><i data-lucide="trophy"></i> 2nd Place @ Pragyotsav</span>
-                        </div>
+                        <a href="https://github.com/ArvindRamakrishnan78907/Roolts" target="_blank" class="apple-btn apple-btn-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
                     </div>
                 </div>
 
                 <!-- Water Quality -->
-                <div class="project-showcase glass reveal-scroll reverse">
-                    <div class="project-img-box">
-                        <img src="assets/water.png" alt="Water Quality Analysis System">
+                <div class="project-block reverse reveal-up">
+                    <div class="project-media project-media-large">
+                        <img src="assets/water.png" alt="Water Quality Prediction System">
                     </div>
-                    <div class="project-details">
-                        <div class="project-num">02</div>
-                        <h3>Water Quality Prediction System</h3>
-                        <p>Real-time monitoring across 49 Asian countries. Implemented CatBoost/XGBoost with k-fold cross-validation for contamination risk assessment based on 7 key indicators.</p>
+                    <div class="project-info">
+                        <h3>Water Quality Prediction</h3>
+                        <p class="project-subtitle">Environmental Monitoring System for Asian Regions</p>
+                        <p class="project-desc">Engineered a scalable O(n) data pipeline to process 24GB+ of environmental time-series data, reducing computational complexity by 300x through optimized vectorized operations. Deployed across 49 Asian countries.</p>
+                        <ul class="project-highlights">
+                            <li>Deployed CatBoost/XGBoost models with k-fold cross-validation</li>
+                            <li>Risk assessments aligned with WHO/EPA standards</li>
+                            <li>Dynamic dashboards integrating live API data from Hong Kong EPD</li>
+                        </ul>
                         <div class="project-tags">
-                            <span>Python</span><span>Machine Learning</span><span>Kalman filtering</span><span>API Integration</span>
+                            <span>Python</span><span>Machine Learning</span><span>Kalman Filtering</span><span>API Integration</span>
                         </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/ArvindRamakrishnan78907/Water-Quality-Analysis-and-Prediction-System-for-Asian-Regions" target="_blank" class="btn btn-small">VIEW REPO <i data-lucide="github"></i></a>
-                        </div>
+                        <a href="https://github.com/ArvindRamakrishnan78907/Water-Quality-Analysis-and-Prediction-System-for-Asian-Regions" target="_blank" class="apple-btn apple-btn-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Experience & Certifications -->
-        <section id="certifications">
-            <div class="container split-vane">
-                <div class="experience-vane">
-                    <h2 class="title-reveal">EXPERIENCE</h2>
-                    <div class="timeline">
-                        <div class="timeline-node">
-                            <div class="node-dot"></div>
-                            <div class="node-content">
-                                <h4>AI/Data Science Intern</h4>
-                                <p class="node-org">1M1B Green Internship (Virtual)</p>
-                                <p class="node-date">Dec 2025 - Jan 2026</p>
-                                <ul class="node-list">
-                                    <li>Processed 24GB+ environmental monitoring data.</li>
-                                    <li>Reduced computational complexity by 300x via vectorized operations.</li>
-                                    <li>Built a 4-tier water quality classification system.</li>
-                                </ul>
+        <!-- ==================== EXPERIENCE & CERTS ==================== -->
+        <section id="experience" class="bg-surface">
+            <div class="container">
+                <div class="exp-layout">
+                    <div class="exp-col">
+                        <p class="section-label reveal-up">Experience</p>
+                        <h2 class="section-headline reveal-up d1">Where I've contributed.</h2>
+
+                        <div class="exp-card reveal-up d2">
+                            <div class="exp-header">
+                                <h4>AI / Data Science Intern</h4>
+                                <span class="exp-date">Dec 2025 — Jan 2026</span>
+                            </div>
+                            <p class="exp-org">1M1B Green Internship · Virtual</p>
+                            <ul class="exp-list">
+                                <li>Engineered a scalable O(n) data pipeline to process 24GB+ of environmental data</li>
+                                <li>Reduced computational complexity by 300x through optimized vectorized operations</li>
+                                <li>Architected an interactive web application for real-time water quality monitoring</li>
+                                <li>Built a 4-tier water quality classification system across 7 key indicators</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="exp-col">
+                        <p class="section-label reveal-up">Certifications</p>
+                        <h2 class="section-headline reveal-up d1">Continuous learning.</h2>
+
+                        <div class="certs-stack reveal-up d2">
+                            <div class="cert-row">
+                                <div class="cert-issuer">NPTEL (IIT)</div>
+                                <div class="cert-names">Natural Language Processing · IoT · Blockchain Architecture</div>
+                            </div>
+                            <div class="cert-row">
+                                <div class="cert-issuer">IBM</div>
+                                <div class="cert-names">Agentic AI · Sustainability & Technology · ML & Deep Learning</div>
+                            </div>
+                            <div class="cert-row">
+                                <div class="cert-issuer">Cisco</div>
+                                <div class="cert-names">Security & Connectivity · Python Essentials · CyberSecurity · Modern AI</div>
+                            </div>
+                            <div class="cert-row">
+                                <div class="cert-issuer">Microsoft</div>
+                                <div class="cert-names">Foundational C# Certification</div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="certificates-vane">
-                    <h2 class="title-reveal">CERTIFICATES</h2>
-                    <div class="certs-grid">
-                        <div class="cert-card glass">
-                            <i data-lucide="award"></i>
-                            <span>Foundational C# - Microsoft</span>
-                        </div>
-                        <div class="cert-card glass">
-                            <i data-lucide="award"></i>
-                            <span>Agentic AI - IBM</span>
-                        </div>
-                        <div class="cert-card glass">
-                            <i data-lucide="award"></i>
-                            <span>ML & Deep Learning - IBM</span>
-                        </div>
-                        <div class="cert-card glass">
-                            <i data-lucide="award"></i>
-                            <span>CyberSecurity - Cisco</span>
-                        </div>
-                        <div class="cert-card glass">
-                            <i data-lucide="award"></i>
-                            <span>Sustainability - IBM</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- ==================== CONTACT ==================== -->
         <section id="contact">
-            <div class="container contact-wrapper">
-                <div class="contact-info">
-                    <h2 class="title-reveal">READY TO BUILD SOMETHING GREAT?</h2>
-                    <p>Currently open to internships and AI-focused collaborations.</p>
-                    <div class="contact-methods">
-                        <div class="method">
+            <div class="container contact-center">
+                <p class="section-label reveal-up">Contact</p>
+                <h2 class="contact-headline reveal-up d1">Let's build<br>something great.</h2>
+                <p class="contact-sub reveal-up d2">Currently open to internships, AI-focused collaborations, and interesting projects.</p>
+
+                <div class="contact-row reveal-up d3">
+                    <div class="contact-pill-group">
+                        <a href="mailto:arvindramakrishnan17@gmail.com" class="contact-pill">
                             <i data-lucide="mail"></i>
-                            <div>
-                                <span>EMAIL</span>
-                                <a href="mailto:arvindramakrishnan17@gmail.com">arvindramakrishnan17@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="method">
-                            <i data-lucide="smartphone"></i>
-                            <div>
-                                <span>PHONE</span>
-                                <p>+91 9486266023</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/ArvindRamakrishnan78907" target="_blank"><i data-lucide="github"></i></a>
-                        <a href="#" target="_blank"><i data-lucide="linkedin"></i></a>
-                    </div>
-                </div>
-                <div class="contact-form-box glass">
-                    <form action="https://formspree.io/f/arvindramakrishnan17@gmail.com" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>NAME</label>
-                                <input type="text" name="name" placeholder="Enter your name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>EMAIL</label>
-                            <input type="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label>MESSAGE</label>
-                            <textarea name="message" placeholder="What's on your mind?" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn">
-                            SEND MESSAGE <i data-lucide="send"></i>
+                            <span>arvindramakrishnan17@gmail.com</span>
+                        </a>
+                        <button class="copy-btn" id="copy-email" data-email="arvindramakrishnan17@gmail.com" title="Copy email">
+                            <i data-lucide="copy"></i>
                         </button>
-                    </form>
+                    </div>
+                    <a href="tel:+919486266023" class="contact-pill">
+                        <i data-lucide="phone"></i>
+                        <span>+91 9486266023</span>
+                    </a>
+                </div>
+
+                <div class="social-row reveal-up d4">
+                    <a href="https://github.com/ArvindRamakrishnan78907" target="_blank" class="social-link">
+                        <img src="assets/github.png" alt="GitHub" class="social-img"> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/arvind-ramakrishnan-17493727b/" target="_blank" class="social-link">
+                        <img src="assets/linkedin.png" alt="LinkedIn" class="social-img"> LinkedIn
+                    </a>
+                    <a href="https://www.instagram.com/arvindramakrishnan78907/" target="_blank" class="social-link">
+                        <img src="assets/instagram.png" alt="Instagram" class="social-img"> Instagram
+                    </a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 ARVIND RAMAKRISHNAN. ALL RIGHTS RESERVED.</p>
-            <div class="footer-meta">
-                BUILT WITH <i data-lucide="heart" class="heart-pulse"></i> AND PRECISION.
-            </div>
+        <div class="container footer-inner">
+            <span>© 2026 Arvind Ramakrishnan</span>
+            <span>Chennai, Tamil Nadu</span>
         </div>
     </footer>
 
-    <!-- Logic -->
     <script src="script.js"></script>
-    <script>
-        // Init Lucide Icons
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
