@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arvind Ramakrishnan | AI/ML Developer</title>
-    <meta name="description" content="Arvind Ramakrishnan — Solutions-driven AI/ML Developer and Software Engineer. Building intelligent systems, beautifully engineered.">
+    <meta name="description" content="Arvind Ramakrishnan — CS undergrad building developer tools and data pipelines. Creator of Roolts (multi-LLM web IDE) and environmental monitoring systems.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
     
@@ -67,52 +67,80 @@
     </nav>
 
     <main>
-        <!-- ==================== HERO ==================== -->
+        <!-- ==================== REDESIGNED HERO ==================== -->
         <section id="hero">
-            <div class="hero-center">
-                <p class="hero-eyebrow reveal-up">Arvind Ramakrishnan</p>
-                <h1 class="hero-headline reveal-up d1">
-                    Intelligent systems.<br>
-                    <span class="text-gradient">Beautifully engineered.</span>
-                </h1>
-                <p class="hero-sub reveal-up d2">
-                    Solutions-driven AI/ML Developer and Software Engineer with expertise in Python, Data Engineering, and full-stack development — with a proven track record of processing 24GB+ datasets and architecting complex web applications.
-                </p>
-                <div class="hero-actions reveal-up d3">
-                    <a href="#work" class="apple-btn apple-btn-filled">Explore Projects</a>
-                    <a href="#contact" class="apple-btn apple-btn-outline">Get in Touch</a>
+            <div class="workbench-container">
+                
+                <!-- Left Column: Personal & Direct -->
+                <div class="workbench-bio">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        <span>Open to internships &amp; ML projects · Chennai, IN</span>
+                    </div>
+
+                    <h1 class="workbench-title">
+                        I build developer tools<br>& data pipelines that<br>actually perform.
+                    </h1>
+
+                    <p class="workbench-description">
+                        Hey, I'm <strong>Arvind</strong> — a II-year CS undergrad at 
+                        Easwari Engineering College. Currently building 
+                        <strong>Roolts</strong> (a zero-setup browser IDE with multi-LLM routing) 
+                        and engineering pipelines that process <strong>24 GB+</strong> datasets 
+                        with 300× speedups.
+                    </p>
+
+                    <div class="workbench-cta-group">
+                        <a href="#work" class="wb-btn wb-btn-primary">View Selected Work ↓</a>
+                        <a href="https://github.com/ArvindRamakrishnan78907" target="_blank" class="wb-btn wb-btn-secondary">
+                            GitHub ↗
+                        </a>
+                        <button id="open-resume-modal-hero" class="wb-btn wb-btn-ghost">Resume ↗</button>
+                    </div>
                 </div>
-            </div>
-            <div class="hero-visual reveal-up d4">
-                <img src="assets/avatar.png" alt="Arvind Ramakrishnan">
+
+                <!-- Right Column: Real Terminal Card -->
+                <div class="workbench-preview">
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-file">arvind@workstation ~/projects</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="cmd-prompt">$</span> 
+                                <span class="cmd-run">cat status.json</span>
+                            </div>
+                            <pre class="terminal-output"><code>{
+  <span class="json-key">"name"</span>: <span class="json-str">"Arvind Ramakrishnan"</span>,
+  <span class="json-key">"role"</span>: <span class="json-str">"CS Undergrad & ML Developer"</span>,
+  <span class="json-key">"active_project"</span>: <span class="json-str">"Roolts (Web IDE)"</span>,
+  <span class="json-key">"features"</span>: [
+    <span class="json-str">"Dynamic LLM Router"</span>,
+    <span class="json-str">"Stylus Code Annotations"</span>,
+    <span class="json-str">"Monaco Multi-lang Editor"</span>
+  ],
+  <span class="json-key">"latest_benchmark"</span>: {
+    <span class="json-key">"task"</span>: <span class="json-str">"Water Quality Pipeline"</span>,
+    <span class="json-key">"dataset"</span>: <span class="json-str">"24.2 GB time-series"</span>,
+    <span class="json-key">"optimization"</span>: <span class="json-str">"Vectorized O(n)"</span>,
+    <span class="json-key">"speedup"</span>: <span class="json-str">"300x"</span>,
+    <span class="json-key">"coverage"</span>: <span class="json-str">"49 Asian countries"</span>
+  },
+  <span class="json-key">"stack"</span>: [<span class="json-str">"Python"</span>, <span class="json-str">"React"</span>, <span class="json-str">"CatBoost"</span>, <span class="json-str">"Node.js"</span>]
+}</code></pre>
+                            <div class="terminal-line">
+                                <span class="cmd-prompt">$</span> 
+                                <span class="cursor-blink">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
-
-        <!-- ==================== MARQUEE TICKER ==================== -->
-        <div class="ticker-strip">
-            <div class="ticker-track">
-                <span>Python</span><span>·</span>
-                <span>Java</span><span>·</span>
-                <span>JavaScript</span><span>·</span>
-                <span>React</span><span>·</span>
-                <span>Machine Learning</span><span>·</span>
-                <span>Gen AI</span><span>·</span>
-                <span>Data Engineering</span><span>·</span>
-                <span>AWS</span><span>·</span>
-                <span>SQL</span><span>·</span>
-                <span>Prompt Engineering</span><span>·</span>
-                <span>Python</span><span>·</span>
-                <span>Java</span><span>·</span>
-                <span>JavaScript</span><span>·</span>
-                <span>React</span><span>·</span>
-                <span>Machine Learning</span><span>·</span>
-                <span>Gen AI</span><span>·</span>
-                <span>Data Engineering</span><span>·</span>
-                <span>AWS</span><span>·</span>
-                <span>SQL</span><span>·</span>
-                <span>Prompt Engineering</span><span>·</span>
-            </div>
-        </div>
 
         <!-- ==================== ABOUT ==================== -->
         <section id="about">

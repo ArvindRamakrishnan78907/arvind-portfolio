@@ -1,6 +1,6 @@
 /**
- * Arvind Ramakrishnan — Portfolio
- * Apple-style scroll animations & interactivity
+ * Arvind Ramakrishnan — Portfolio (Redesigned)
+ * Scroll animations & interactivity
  */
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavScroll();
     initCopyEmail();
     initTheaterMode();
+    initHeroAnimation();
 });
 
 /* ── Loader ──────────────────────────────── */
@@ -34,8 +35,44 @@ function initLoader() {
 
 /* ── Hero entrance ───────────────────────── */
 function revealHero() {
-    // Normal loading, no transitions.
     gsap.set('#navbar', { y: 0, opacity: 1 });
+}
+
+/* ── Hero Animation (Workbench) ──────────── */
+function initHeroAnimation() {
+    // Animate hero elements in sequence after page load
+    const tl = gsap.timeline({ delay: 0.6 });
+    
+    tl.from('.status-pill', {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: 'power2.out'
+    })
+    .from('.workbench-title', {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        ease: 'power2.out'
+    }, '-=0.3')
+    .from('.workbench-description', {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: 'power2.out'
+    }, '-=0.3')
+    .from('.workbench-cta-group', {
+        opacity: 0,
+        y: 20,
+        duration: 0.5,
+        ease: 'power2.out'
+    }, '-=0.2')
+    .from('.terminal-card', {
+        opacity: 0,
+        x: 40,
+        duration: 0.7,
+        ease: 'power2.out'
+    }, '-=0.4');
 }
 
 /* ── Scroll-triggered reveals ────────────── */
@@ -58,9 +95,10 @@ function initNavScroll() {
 /* ── Resume Modal ────────────────────────── */
 function initModal() {
     const openBtn = document.getElementById('open-resume-modal');
+    const openBtnHero = document.getElementById('open-resume-modal-hero');
     const closeBtn = document.getElementById('close-modal');
     const modal = document.getElementById('resume-modal');
-    if (!openBtn || !closeBtn || !modal) return;
+    if (!closeBtn || !modal) return;
 
     const open = () => {
         modal.classList.add('active');
@@ -71,7 +109,8 @@ function initModal() {
         document.body.style.overflow = '';
     };
 
-    openBtn.addEventListener('click', open);
+    if (openBtn) openBtn.addEventListener('click', open);
+    if (openBtnHero) openBtnHero.addEventListener('click', open);
     closeBtn.addEventListener('click', close);
     modal.addEventListener('click', e => { if (e.target === modal) close(); });
 
